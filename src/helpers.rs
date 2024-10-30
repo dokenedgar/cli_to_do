@@ -4,10 +4,16 @@ use std::{
     path::Path,
 };
 
+/// Checks if a file exists or not.
+/// ### Arguments
+/// * `file_path_string` - the path to the file
+///
+/// ### Returns
+/// a `bool` stating if the path points to a file (it exists)
+/// or not.
 pub fn check_file_exists(file_path_string: &str) -> bool {
     let file_path = create_path(file_path_string);
     let result: bool = file_path.is_file();
-    // println!("File exists: {result}");
     result
 }
 
@@ -77,6 +83,9 @@ pub fn get_input_from_cli(prompt: &str) -> String {
     input.trim().to_string()
 }
 
+/**
+askldnfa
+*/
 pub fn create_file_if_not_exists(file_path_string: &str) {
     if !check_file_exists(file_path_string) {
         let file_path = create_path(file_path_string);
